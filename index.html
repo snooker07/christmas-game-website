@@ -94,16 +94,11 @@
 
             <!-- Hero Image (Portrait Optimized) -->
             <div class="relative z-10 flex justify-center order-1 md:order-2">
-                <!-- 
-                     Using screen1.png 
-                     Added 'border-[12px] border-black' to look like a phone bezel 
-                -->
+                <!-- HERO IMAGE: screen1.png -->
                 <div class="relative w-[300px] h-[600px] glass rounded-[2.5rem] border-[12px] border-black shadow-2xl float-img overflow-hidden">
                     <img src="screen1.png" 
-                         alt="Game Screenshot" 
+                         alt="Game Screenshot Main" 
                          class="w-full h-full object-cover">
-                    
-                    <!-- Shine Effect on Glass -->
                     <div class="absolute top-0 right-0 w-full h-full bg-gradient-to-tr from-white/10 to-transparent pointer-events-none"></div>
                 </div>
             </div>
@@ -115,26 +110,21 @@
         <div class="container mx-auto px-4">
             <h2 class="text-4xl text-center mb-12 text-red-500">In-Game Action</h2>
             
-            <!-- Gallery Grid (Updated for Portrait Images) -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
                 
-                <!-- Image 1 (Using screen2.png) -->
+                <!-- Gallery 1: Using screen2.png -->
                 <div class="glass p-2 rounded-3xl border-4 border-gray-800 hover:scale-105 transition duration-500 w-[280px]">
                     <img src="screen2.png" class="rounded-2xl w-full h-[500px] object-cover" alt="Gameplay Level">
                 </div>
 
-                <!-- Image 2 (Reusing screen1.png for layout balance) -->
+                <!-- Gallery 2: Using screen3.png -->
                 <div class="glass p-2 rounded-3xl border-4 border-gray-800 hover:scale-105 transition duration-500 w-[280px]">
-                    <img src="screen1.png" class="rounded-2xl w-full h-[500px] object-cover" alt="Gameplay Main">
+                    <img src="screen3.png" class="rounded-2xl w-full h-[500px] object-cover" alt="Gameplay Action">
                 </div>
 
-                <!-- Image 3 (Placeholder / Coming Soon since you only had 2 images) -->
-                <div class="glass p-2 rounded-3xl border-4 border-gray-800 hover:scale-105 transition duration-500 w-[280px] flex items-center justify-center bg-black/20">
-                    <div class="text-center p-6">
-                        <div class="text-4xl mb-2">🎁</div>
-                        <h3 class="text-xl font-bold">More Levels</h3>
-                        <p class="text-sm text-gray-400 mt-2">Coming in update 1.1</p>
-                    </div>
+                <!-- Gallery 3: Reusing screen1.png to complete the set -->
+                <div class="glass p-2 rounded-3xl border-4 border-gray-800 hover:scale-105 transition duration-500 w-[280px]">
+                     <img src="screen1.png" class="rounded-2xl w-full h-[500px] object-cover" alt="Gameplay Main">
                 </div>
 
             </div>
@@ -162,7 +152,7 @@
         </div>
     </section>
 
-    <!-- Professional Privacy Policy (GDPR/CCPA Friendly) -->
+    <!-- Professional Privacy Policy -->
     <section id="privacy" class="py-24 container mx-auto px-4 max-w-4xl">
         <div class="glass p-8 md:p-12 rounded-3xl">
             <h2 class="text-3xl mb-8 border-b border-gray-700 pb-4">Privacy Policy</h2>
@@ -189,7 +179,7 @@
                 All financial transactions (e.g., "Remove Ads") are handled exclusively by Apple via the App Store. We do not process or store any credit card or banking information on our servers.</p>
 
                 <p><strong>4. Children's Privacy</strong><br>
-                Our game is intended for general audiences. We do not knowingly collect personal information from children under the age of 13. If you believe your child has provided us with personal information, please contact us.</p>
+                Our game is intended for general audiences. We do not knowingly collect personal information from children under the age of 13. We do not request user age, birthdate, or name within the application.</p>
 
                 <p><strong>5. Contact Information</strong><br>
                 For any privacy-related questions or support requests, please contact:<br>
@@ -210,20 +200,17 @@
             snowflake.classList.add('snowflake');
             snowflake.innerHTML = '❄';
             
-            // Randomize position and size
             snowflake.style.left = Math.random() * 100 + 'vw';
             snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
-            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's'; // Between 2-5 seconds
+            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's'; 
             
             snowContainer.appendChild(snowflake);
 
-            // Remove after animation
             setTimeout(() => {
                 snowflake.remove();
             }, 5000);
         }
 
-        // Generate snow every 200ms
         setInterval(createSnow, 200);
     </script>
 </body>
