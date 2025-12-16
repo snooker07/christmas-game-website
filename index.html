@@ -74,7 +74,7 @@
     <!-- Hero Section -->
     <section id="game" class="min-h-screen flex items-center justify-center pt-20 px-4">
         <div class="container mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-6 z-10 text-center md:text-left">
+            <div class="space-y-6 z-10 text-center md:text-left order-2 md:order-1">
                 <span class="text-green-400 font-bold tracking-widest text-sm uppercase">Winter 2025 Release</span>
                 <h1 class="text-6xl md:text-8xl leading-tight">
                     Break the <br>
@@ -92,20 +92,19 @@
                 <p class="text-xs text-gray-500 mt-2">Coming soon to App Store</p>
             </div>
 
-            <!-- 
-                 PLACEHOLDER IMAGE: 
-                 Once you upload your screenshot to GitHub, change src below to "screen1.png" 
-            -->
-            <div class="relative z-10 flex justify-center">
-                <div class="relative w-64 md:w-80 h-[500px] glass rounded-[3rem] border-4 border-gray-800 shadow-2xl float-img overflow-hidden">
-                    <!-- Temporary Placeholder from Unsplash -->
-                    <img src="https://images.unsplash.com/photo-1544259929-798c19904252?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" 
+            <!-- Hero Image (Portrait Optimized) -->
+            <div class="relative z-10 flex justify-center order-1 md:order-2">
+                <!-- 
+                     Using screen1.png 
+                     Added 'border-[12px] border-black' to look like a phone bezel 
+                -->
+                <div class="relative w-[300px] h-[600px] glass rounded-[2.5rem] border-[12px] border-black shadow-2xl float-img overflow-hidden">
+                    <img src="screen1.png" 
                          alt="Game Screenshot" 
-                         class="w-full h-full object-cover opacity-80">
+                         class="w-full h-full object-cover">
                     
-                    <!-- Fake UI overlay to look like a game -->
-                    <div class="absolute top-10 left-0 w-full text-center font-bold text-2xl festive-font text-white drop-shadow-md">Level 25</div>
-                    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-white rounded-full opacity-20"></div>
+                    <!-- Shine Effect on Glass -->
+                    <div class="absolute top-0 right-0 w-full h-full bg-gradient-to-tr from-white/10 to-transparent pointer-events-none"></div>
                 </div>
             </div>
         </div>
@@ -115,20 +114,29 @@
     <section id="gallery" class="py-20 relative z-10">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl text-center mb-12 text-red-500">In-Game Action</h2>
-            <!-- 
-                 If you have your own images, replace the SRCs below.
-                 Example: src="screen1.png"
-            -->
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="glass p-2 rounded-xl hover:scale-105 transition duration-500">
-                    <img src="https://images.unsplash.com/photo-1607311681283-585354964177?auto=format&fit=crop&w=500&q=60" class="rounded-lg w-full h-64 object-cover" alt="Gameplay 1">
+            
+            <!-- Gallery Grid (Updated for Portrait Images) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
+                
+                <!-- Image 1 (Using screen2.png) -->
+                <div class="glass p-2 rounded-3xl border-4 border-gray-800 hover:scale-105 transition duration-500 w-[280px]">
+                    <img src="screen2.png" class="rounded-2xl w-full h-[500px] object-cover" alt="Gameplay Level">
                 </div>
-                <div class="glass p-2 rounded-xl hover:scale-105 transition duration-500">
-                    <img src="https://images.unsplash.com/photo-1576615278693-f4a47732a39a?auto=format&fit=crop&w=500&q=60" class="rounded-lg w-full h-64 object-cover" alt="Gameplay 2">
+
+                <!-- Image 2 (Reusing screen1.png for layout balance) -->
+                <div class="glass p-2 rounded-3xl border-4 border-gray-800 hover:scale-105 transition duration-500 w-[280px]">
+                    <img src="screen1.png" class="rounded-2xl w-full h-[500px] object-cover" alt="Gameplay Main">
                 </div>
-                <div class="glass p-2 rounded-xl hover:scale-105 transition duration-500">
-                    <img src="https://images.unsplash.com/photo-1512413391854-156ab750cc46?auto=format&fit=crop&w=500&q=60" class="rounded-lg w-full h-64 object-cover" alt="Gameplay 3">
+
+                <!-- Image 3 (Placeholder / Coming Soon since you only had 2 images) -->
+                <div class="glass p-2 rounded-3xl border-4 border-gray-800 hover:scale-105 transition duration-500 w-[280px] flex items-center justify-center bg-black/20">
+                    <div class="text-center p-6">
+                        <div class="text-4xl mb-2">🎁</div>
+                        <h3 class="text-xl font-bold">More Levels</h3>
+                        <p class="text-sm text-gray-400 mt-2">Coming in update 1.1</p>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
