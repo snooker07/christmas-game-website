@@ -3,137 +3,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Christmas Breaker - Official Game Site</title>
-    <!-- Tailwind CSS -->
+    <title>Christmas Breaker | Endless Festive Arcade</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        /* A frosty red/green gradient for the Christmas Breaker theme */
-        .holiday-gradient { background: linear-gradient(135deg, #b91c1c 0%, #1e3a8a 100%); }
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #0f172a;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, .festive-font {
+            font-family: 'Mountains of Christmas', cursive;
+        }
+        
+        /* Dynamic Snow Animation */
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            color: white;
+            opacity: 0.8;
+            pointer-events: none;
+            z-index: 0;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(110vh); }
+        }
+
+        /* Glassmorphism Effect */
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Floating Animation for Hero Image */
+        .float-img {
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="text-white relative">
 
-    <!-- Navbar -->
-    <nav class="bg-white shadow-md p-4 sticky top-0 z-50">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class="font-bold text-xl text-red-700">🎅 Christmas Breaker</div>
-            <div class="space-x-4 text-sm md:text-base">
-                <a href="#features" class="hover:text-red-600 transition">Game</a>
-                <a href="#privacy" class="hover:text-red-600 transition">Privacy</a>
-                <a href="#support" class="hover:text-red-600 transition">Support</a>
+    <!-- Background Gradient Mesh -->
+    <div class="fixed inset-0 z-[-1]" style="background: radial-gradient(circle at 50% 50%, #1e293b 0%, #000000 100%);"></div>
+    <div class="fixed top-0 left-0 w-full h-full z-[-1] opacity-30" 
+         style="background: radial-gradient(circle at 80% 20%, #dc2626 0%, transparent 20%), radial-gradient(circle at 20% 80%, #166534 0%, transparent 20%);">
+    </div>
+
+    <!-- Navigation -->
+    <nav class="glass fixed w-full z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl text-red-500 font-bold tracking-wider festive-font">Christmas Breaker</div>
+            <div class="hidden md:flex space-x-8 text-sm font-semibold tracking-wide">
+                <a href="#game" class="hover:text-red-400 transition">GAME</a>
+                <a href="#gallery" class="hover:text-green-400 transition">GALLERY</a>
+                <a href="#privacy" class="hover:text-red-400 transition">PRIVACY</a>
+                <a href="mailto:support@fundelits.com" class="bg-red-600 px-4 py-2 rounded-full hover:bg-red-700 transition">SUPPORT</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="holiday-gradient text-white py-24 text-center px-4">
-        <h1 class="text-5xl md:text-7xl font-extrabold mb-4 drop-shadow-lg">Christmas Breaker</h1>
-        <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto font-light">
-            The addictive festive arcade game! Aim, shoot, and break the ornaments before they reach the bottom.
-        </p>
-        
-        <!-- App Store Badge Placeholder -->
-        <a href="#" class="inline-flex items-center bg-black text-white px-6 py-3 rounded-xl font-bold text-lg hover:scale-105 transition transform shadow-xl">
-            <span class="mr-2 text-2xl">🍎</span> Download on App Store
-        </a>
-        <p class="mt-4 text-sm text-blue-100 opacity-80">(Coming soon to iOS & iPadOS)</p>
-    </header>
-
-    <!-- Gameplay Features -->
-    <section id="features" class="py-20 container mx-auto px-4">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-gray-900">How long can you survive?</h2>
-            <p class="text-gray-600 mt-2">Simple controls, infinite fun.</p>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-10">
-            <!-- Feature 1 -->
-            <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition border-t-4 border-red-500">
-                <div class="text-5xl mb-6">🎱</div>
-                <h3 class="font-bold text-xl mb-3">Endless Gameplay</h3>
-                <p class="text-gray-600">
-                    Just like the classic 'Ballz' game. Every round, the blocks get tougher. Collect power-ups to gain more balls!
+    <section id="game" class="min-h-screen flex items-center justify-center pt-20 px-4">
+        <div class="container mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6 z-10 text-center md:text-left">
+                <span class="text-green-400 font-bold tracking-widest text-sm uppercase">Winter 2025 Release</span>
+                <h1 class="text-6xl md:text-8xl leading-tight">
+                    Break the <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">Ice.</span>
+                </h1>
+                <p class="text-gray-300 text-lg md:text-xl max-w-lg mx-auto md:mx-0 font-light">
+                    Experience the ultimate test of strategy and precision. Survive the infinite snowfall, unlock powerful balls, and dominate the leaderboard in a physics-based winter wonderland.
                 </p>
+                <div class="flex flex-col md:flex-row gap-4 justify-center md:justify-start pt-4">
+                    <button class="bg-white text-black px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-3 hover:scale-105 transition shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-53.7-88-56.4-37.1-2.5-79.8 17.3-102.8 17.3-24.9 0-59.4-15.6-89.3-15.6-86 0-147.2 102.8-147.2 207.2 0 49.6 14.3 93.6 37.8 127.3 22.8 33.1 54.6 69.3 90 69.3 29.5 0 43.1-18.8 83.2-18.8 40.1 0 53.7 18.8 83.9 18.8 29.5 0 62.1-36.3 84.8-69.3 16.9-24.6 28.5-56.9 28.5-56.9-1.9-3.4-60.5-23.4-61.5-123.1z"/></svg>
+                        Download on iOS
+                    </button>
+                </div>
+                <p class="text-xs text-gray-500 mt-2">Coming soon to App Store</p>
             </div>
+
+            <!-- 
+                 PLACEHOLDER IMAGE: 
+                 Once you upload your screenshot to GitHub, change src below to "screen1.png" 
+            -->
+            <div class="relative z-10 flex justify-center">
+                <div class="relative w-64 md:w-80 h-[500px] glass rounded-[3rem] border-4 border-gray-800 shadow-2xl float-img overflow-hidden">
+                    <!-- Temporary Placeholder from Unsplash -->
+                    <img src="https://images.unsplash.com/photo-1544259929-798c19904252?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" 
+                         alt="Game Screenshot" 
+                         class="w-full h-full object-cover opacity-80">
+                    
+                    <!-- Fake UI overlay to look like a game -->
+                    <div class="absolute top-10 left-0 w-full text-center font-bold text-2xl festive-font text-white drop-shadow-md">Level 25</div>
+                    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-white rounded-full opacity-20"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshot Gallery -->
+    <section id="gallery" class="py-20 relative z-10">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl text-center mb-12 text-red-500">In-Game Action</h2>
+            <!-- 
+                 If you have your own images, replace the SRCs below.
+                 Example: src="screen1.png"
+            -->
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="glass p-2 rounded-xl hover:scale-105 transition duration-500">
+                    <img src="https://images.unsplash.com/photo-1607311681283-585354964177?auto=format&fit=crop&w=500&q=60" class="rounded-lg w-full h-64 object-cover" alt="Gameplay 1">
+                </div>
+                <div class="glass p-2 rounded-xl hover:scale-105 transition duration-500">
+                    <img src="https://images.unsplash.com/photo-1576615278693-f4a47732a39a?auto=format&fit=crop&w=500&q=60" class="rounded-lg w-full h-64 object-cover" alt="Gameplay 2">
+                </div>
+                <div class="glass p-2 rounded-xl hover:scale-105 transition duration-500">
+                    <img src="https://images.unsplash.com/photo-1512413391854-156ab750cc46?auto=format&fit=crop&w=500&q=60" class="rounded-lg w-full h-64 object-cover" alt="Gameplay 3">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section class="py-20 bg-black/30">
+        <div class="container mx-auto px-4 grid md:grid-cols-3 gap-8 text-center">
+            <div class="p-8 border border-white/10 rounded-2xl hover:bg-white/5 transition group">
+                <div class="text-5xl mb-4 group-hover:scale-125 transition duration-300">🧊</div>
+                <h3 class="text-2xl font-bold mb-2 text-blue-300">Physics Based</h3>
+                <p class="text-gray-400">Precision matters. Calculate your angles and watch the chaos unfold.</p>
+            </div>
+            <div class="p-8 border border-white/10 rounded-2xl hover:bg-white/5 transition group">
+                <div class="text-5xl mb-4 group-hover:scale-125 transition duration-300">🔥</div>
+                <h3 class="text-2xl font-bold mb-2 text-red-300">Infinite Escalation</h3>
+                <p class="text-gray-400">One more ball, one more life. How long can you keep the board clear?</p>
+            </div>
+            <div class="p-8 border border-white/10 rounded-2xl hover:bg-white/5 transition group">
+                <div class="text-5xl mb-4 group-hover:scale-125 transition duration-300">💎</div>
+                <h3 class="text-2xl font-bold mb-2 text-yellow-300">Premium Option</h3>
+                <p class="text-gray-400">Hate interruptions? Unlock the full ad-free experience instantly.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Privacy Policy (GDPR/CCPA Friendly) -->
+    <section id="privacy" class="py-24 container mx-auto px-4 max-w-4xl">
+        <div class="glass p-8 md:p-12 rounded-3xl">
+            <h2 class="text-3xl mb-8 border-b border-gray-700 pb-4">Privacy Policy</h2>
             
-            <!-- Feature 2 -->
-            <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition border-t-4 border-green-500">
-                <div class="text-5xl mb-6">🎄</div>
-                <h3 class="font-bold text-xl mb-3">Festive Atmosphere</h3>
-                <p class="text-gray-600">
-                    Built with Unity, featuring smooth physics, Christmas-themed blocks, and satisfying sound effects.
-                </p>
-            </div>
+            <div class="space-y-6 text-gray-300 text-sm leading-relaxed">
+                <p class="italic">Last Updated: December 16, 2025</p>
 
-            <!-- Feature 3 -->
-            <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition border-t-4 border-blue-500">
-                <div class="text-5xl mb-6">🚫</div>
-                <h3 class="font-bold text-xl mb-3">Ad-Free Option</h3>
-                <p class="text-gray-600">
-                    Play for free with occasional ads, or support the developer with a one-time purchase to remove ads forever.
-                </p>
-            </div>
-        </div>
-    </section>
+                <p><strong>1. Introduction</strong><br>
+                Fundelits ("we," "us," or "our") respects your privacy. This policy explains how we handle data in the mobile application "Christmas Breaker."</p>
 
-    <!-- Support Section (Required by Apple) -->
-    <section id="support" class="bg-gray-100 py-16 px-4">
-        <div class="container mx-auto text-center max-w-2xl">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6">Support & Contact</h2>
-            <p class="mb-8 text-gray-600">
-                Found a bug? The ball got stuck in the chimney? Or just want to say hi?
-                We are here to help.
-            </p>
-            <div class="bg-white p-8 rounded-xl shadow inline-block">
-                <p class="font-semibold text-gray-500 uppercase text-xs tracking-wider mb-2">Developer Contact</p>
-                <!-- UPDATE THIS EMAIL -->
-                <a href="mailto:support@fundelits.com" class="text-2xl font-bold text-blue-600 hover:underline">
-                    support@fundelits.com
-                </a>
+                <p><strong>2. Data Collection & Advertising</strong><br>
+                We use <strong>Unity Ads</strong> to provide a free-to-play experience. Unity Ads may collect data from your device to serve personalized advertisements. This includes:
+                <ul class="list-disc pl-5 mt-2 text-gray-400">
+                    <li>Device identifiers (IDFA/GAID)</li>
+                    <li>IP address</li>
+                    <li>Game data (session length, level progress)</li>
+                </ul>
+                <br>
+                You can opt-out of personalized ads through your device settings (Settings > Privacy > Tracking on iOS).
+                For more details, please review Unity's Privacy Policy: <a href="https://unity.com/legal/privacy-policy" target="_blank" class="text-blue-400 hover:text-blue-300 underline">https://unity.com/legal/privacy-policy</a>
+                </p>
+
+                <p><strong>3. In-App Purchases</strong><br>
+                All financial transactions (e.g., "Remove Ads") are handled exclusively by Apple via the App Store. We do not process or store any credit card or banking information on our servers.</p>
+
+                <p><strong>4. Children's Privacy</strong><br>
+                Our game is intended for general audiences. We do not knowingly collect personal information from children under the age of 13. If you believe your child has provided us with personal information, please contact us.</p>
+
+                <p><strong>5. Contact Information</strong><br>
+                For any privacy-related questions or support requests, please contact:<br>
+                <span class="text-white font-bold">support@fundelits.com</span></p>
             </div>
         </div>
     </section>
 
-    <!-- Privacy Policy (UPDATED FOR UNITY ADS) -->
-    <section id="privacy" class="container mx-auto py-20 px-4 max-w-4xl">
-        <div class="border-l-4 border-gray-300 pl-6">
-            <h2 class="text-3xl font-bold mb-6 text-gray-800">Privacy Policy</h2>
-            <div class="text-sm text-gray-600 space-y-4 leading-relaxed">
-                <p><strong>Last updated: December 16, 2025</strong></p>
-                
-                <p>
-                    <strong>1. Overview</strong><br>
-                    "Christmas Breaker" (the "App") is a free-to-play game utilizing ad-supported monetization. We value your privacy and are transparent about data usage.
-                </p>
-
-                <p>
-                    <strong>2. Data Collection & Third-Party Services</strong><br>
-                    This App uses <strong>Unity Ads</strong> to serve advertisements. Unity Ads may collect and use data such as your Device ID (IDFA/GAID), IP address, and game activity to show personalized ads.
-                </p>
-                
-                <p>
-                    <strong>3. In-App Purchases</strong><br>
-                    The App offers a "Remove Ads" In-App Purchase. Transactions are processed directly by Apple (App Store). We do not store or have access to your credit card or financial information.
-                </p>
-
-                <p>
-                    <strong>4. Children’s Privacy</strong><br>
-                    We do not knowingly collect personal contact information from children. If you are a parent or guardian and believe your child has provided us with personal information, please contact us so we can delete it.
-                </p>
-
-                <p>
-                    <strong>5. Contact Us</strong><br>
-                    If you have questions regarding this privacy policy, please contact us at <a href="mailto:support@fundelits.com" class="text-blue-600">support@fundelits.com</a>.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-gray-900 text-gray-400 text-center py-8 border-t border-gray-800">
-        <p>&copy; 2025 Christmas Breaker. Built with Unity.</p>
-        <p class="text-xs mt-2">Apple and the Apple logo are trademarks of Apple Inc.</p>
+    <footer class="text-center py-10 text-gray-600 text-sm">
+        <p>&copy; 2025 Fundelits. All rights reserved.</p>
     </footer>
 
+    <!-- Snowfall Script -->
+    <script>
+        function createSnow() {
+            const snowContainer = document.body;
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.innerHTML = '❄';
+            
+            // Randomize position and size
+            snowflake.style.left = Math.random() * 100 + 'vw';
+            snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
+            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's'; // Between 2-5 seconds
+            
+            snowContainer.appendChild(snowflake);
+
+            // Remove after animation
+            setTimeout(() => {
+                snowflake.remove();
+            }, 5000);
+        }
+
+        // Generate snow every 200ms
+        setInterval(createSnow, 200);
+    </script>
 </body>
 </html>
