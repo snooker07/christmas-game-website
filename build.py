@@ -13,8 +13,11 @@ REPO = ROOT.parent.parent
 OUT = ROOT / 'dist'
 CONFIG = json.loads((ROOT / 'site-config.json').read_text(encoding='utf-8-sig'))
 parser = argparse.ArgumentParser()
-parser.add_argument('--production', action='store_true', help='Require confirmed publisher and privacy information.')
+mode = parser.add_mutually_exclusive_group()
+mode.add_argument('--production', action='store_true', help='Require confirmed publisher and privacy information for App Store use.')
+mode.add_argument('--publish', action='store_true', help='Publish the portfolio while keeping unfinished privacy policies marked as drafts.')
 args = parser.parse_args()
+is_public = args.production or args.publish
 missing = [key for key in ('publisherName', 'supportEmail', 'privacyEffectiveDate', 'supportRetention', 'hostingPrivacyText') if not CONFIG.get(key)]
 if not CONFIG['christmasBreaker'].get('privacyHtmlFile'):
     missing.append('christmasBreaker.privacyHtmlFile')
@@ -166,7 +169,7 @@ cb_policy_file = CONFIG['christmasBreaker'].get('privacyHtmlFile')
 cb_policy = (ROOT / cb_policy_file).read_text(encoding='utf-8') if cb_policy_file else '<aside class="draft-note"><strong>Privacy policy pending verification.</strong> The existing Christmas Breaker policy and its actual data practices need to be reviewed before this page is published for App Store use.</aside><p>Christmas Breaker has a separate privacy policy from Snow Push. Snow Push’s offline data practices should not be assumed to apply to this game.</p>'
 cb_review = '<aside class="draft-note"><strong>Existing policy retained for review.</strong> This policy comes from the previous Christmas Breaker website. Its current advertising, purchase, and data practices must be checked before release.</aside>' if not CONFIG['christmasBreaker'].get('privacyPracticesReviewed') else ''
 page('/christmas-breaker/privacy/', 'Christmas Breaker Privacy — Fundelits', 'Privacy information for Christmas Breaker.', heading('Christmas Breaker · Privacy', 'Christmas Breaker<br><em>privacy.</em>', 'Privacy information specific to this game.') + f'<article class="legal wrap narrow">{cb_review}{cb_policy}<a class="text-link" href="/christmas-breaker/support/">Christmas Breaker support →</a></article>', 'privacy')
-hosting = '<p>' + esc(CONFIG['hostingPrivacyText']) + '</p>' if CONFIG.get('hostingPrivacyText') else '<p>The fundelits.com website is hosted by Vercel. The domain is registered through Namecheap.</p><aside class="draft-note"><strong>Hosting details pending.</strong> Request logs, recipients, and retention practices must be confirmed before publication on fundelits.com.</aside>'
+hosting = '<p>' + esc(CONFIG['hostingPrivacyText']) + '</p>' if CONFIG.get('hostingPrivacyText') else '<p>The fundelits.com website is hosted by Vercel. The domain is registered through Namecheap.</p><aside class="draft-note"><strong>Hosting details pending.</strong> Request logs, recipients, and retention practices must be confirmed before this policy is finalized for App Store submission.</aside>'
 page('/privacy/website/', 'Website Privacy — Fundelits', 'Information about the Fundelits website and support correspondence.', heading('Fundelits · Website privacy', 'A clear view of<br><em>website privacy.</em>', 'Information about browsing this website and contacting us.') + f'<article class="legal wrap narrow"><h2>Website features</h2><p>This website’s application code does not use analytics, advertising scripts, tracking pixels, cookies, or browser storage. Fonts and artwork are served locally. There are no accounts or newsletter forms.</p><h2>Hosting</h2>{hosting}<h2>External links</h2><p>App Store links, when available, open Apple’s website. Email links open your email application. These services process information under their own policies.</p><h2>Contacting support</h2><p>When you email support, we receive the information you send to us and use it to respond to your request.</p><p>{support_retention}</p><h2>Contact</h2>{contact_policy}</article>', 'privacy')
 page('/404.html', 'Page not found — Fundelits', 'This page could not be found. Explore Fundelits games or visit support.', heading('A little detour', 'Lost in the <em>snow?</em>', 'That page could not be found.') + '<div class="wrap error-actions"><a class="button" href="/">Back to home →</a><a class="text-link" href="/support/">Visit support →</a></div>')
 
@@ -176,6 +179,7 @@ home_content = (ROOT / 'src' / 'homepage.html').read_text(encoding='utf-8')
 legacy = '<section class="legacy-anchor wrap" id="privacy"><h2>Christmas Breaker privacy policy</h2><p><a href="/christmas-breaker/privacy/">Read the Christmas Breaker privacy policy →</a></p></section><section class="legacy-anchor wrap" id="game"><a href="/christmas-breaker/">Visit Christmas Breaker →</a></section><section class="legacy-anchor wrap" id="gallery"><a href="/christmas-breaker/#gallery">View Christmas Breaker screenshots →</a></section>'
 pages['/'] = (home_title, home_description, home_content + legacy, home_section)
 
+indexable_paths = []
 for path, (title, description, content, section) in pages.items():
     is_game = path in ('/christmas-breaker/', '/snow-push/')
     home_head = '<link rel="stylesheet" href="/assets/christmas.css"><script src="/assets/christmas.js" defer></script>' if path == '/' else '<link rel="stylesheet" href="/assets/night.css">' + ('<script src="/assets/ambient.js" defer></script>' if is_game else '')
@@ -183,8 +187,11 @@ for path, (title, description, content, section) in pages.items():
     ambient_markup = '<canvas id="ambient-particles" class="ambient-canvas" aria-hidden="true"></canvas><button id="ambient-motion" class="ambient-motion" type="button" aria-label="Pause background animation" aria-pressed="false" hidden><span data-motion-icon aria-hidden="true">Ⅱ</span><span data-motion-label>Background magic</span></button>' if is_game else ''
     theme_color = '#071522'
     color_scheme = 'dark'
-    robots = 'index,follow' if args.production and path != '/404.html' else 'noindex,nofollow'
-    canonical = f'<link rel="canonical" href="{esc(CONFIG["productionOrigin"].rstrip("/") + path)}">' if args.production else ''
+    indexable = is_public and path != '/404.html' and (args.production or section != 'privacy')
+    if indexable:
+        indexable_paths.append(path)
+    robots = 'index,follow' if indexable else 'noindex,nofollow'
+    canonical = f'<link rel="canonical" href="{esc(CONFIG["productionOrigin"].rstrip("/") + path)}">' if is_public else ''
     nav = ''.join(f'<a href="{url}"' + (' aria-current="page"' if section == key else '') + f'>{label}</a>' for key, label, url in [('games','Games','/#games'),('support','Support','/support/'),('privacy','Privacy','/privacy/')])
     document = f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="{color_scheme}"><title>{esc(title)}</title><meta name="description" content="{esc(description)}"><meta name="robots" content="{robots}">{canonical}<meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(description)}"><meta property="og:type" content="website"><meta name="theme-color" content="{theme_color}"><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/styles.css"><script src="/assets/site.js" defer></script>{home_head}</head>
@@ -193,11 +200,13 @@ for path, (title, description, content, section) in pages.items():
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_text(document, encoding='utf-8')
 
-(OUT / 'robots.txt').write_text('User-agent: *\n' + ('Allow: /\nSitemap: ' + CONFIG['productionOrigin'].rstrip('/') + '/sitemap.xml\n' if args.production else 'Disallow: /\n'), encoding='utf-8')
-if args.production:
-    urls = ''.join('<url><loc>' + esc(CONFIG['productionOrigin'].rstrip('/') + p) + '</loc></url>' for p in pages if not p.endswith('.html'))
+(OUT / 'robots.txt').write_text('User-agent: *\n' + ('Allow: /\nSitemap: ' + CONFIG['productionOrigin'].rstrip('/') + '/sitemap.xml\n' if is_public else 'Disallow: /\n'), encoding='utf-8')
+if is_public:
+    urls = ''.join('<url><loc>' + esc(CONFIG['productionOrigin'].rstrip('/') + p) + '</loc></url>' for p in indexable_paths)
     (OUT / 'sitemap.xml').write_text('<?xml version="1.0" encoding="utf-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + urls + '</urlset>', encoding='utf-8')
 elif (OUT / 'sitemap.xml').exists():
     (OUT / 'sitemap.xml').unlink()
 (OUT / '_headers').write_text('/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  Permissions-Policy: camera=(), microphone=(), geolocation=()\n  Content-Security-Policy: default-src \'self\'; script-src \'self\'; style-src \'self\'; img-src \'self\'; font-src \'self\'; object-src \'none\'; base-uri \'self\'; frame-ancestors \'none\'; form-action \'none\'\n', encoding='utf-8')
-print(json.dumps({'pages': len(pages), 'mode': 'production' if args.production else 'preview', 'output': str(OUT), 'remainingPublisherInputs': missing}, indent=2))
+publication = {'mode': 'production' if args.production else 'portfolio' if args.publish else 'preview', 'remainingPublisherInputs': missing}
+(OUT / 'publication.json').write_text(json.dumps(publication, indent=2) + '\n', encoding='utf-8')
+print(json.dumps({'pages': len(pages), **publication, 'output': str(OUT)}, indent=2))
