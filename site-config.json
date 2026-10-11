@@ -1,0 +1,22 @@
+{
+  "brand": "Fundelits",
+  "publisherName": null,
+  "supportEmail": "support@fundelits.com",
+  "supportEmailConfirmed": true,
+  "privacyEffectiveDate": null,
+  "supportRetention": null,
+  "productionOrigin": "https://fundelits.com",
+  "hosting": {
+    "provider": "Vercel",
+    "domainRegistrar": "Namecheap",
+    "ownerConfirmedOn": "2026-10-11"
+  },
+  "hostingPrivacyText": null,
+  "christmasBreaker": {
+    "description": "A festive, physics-based arcade game. Aim your shots and keep the board clear as the challenge grows.",
+    "storeUrl": null,
+    "privacyHtmlFile": "src/christmas-breaker-privacy.html",
+    "privacyPracticesReviewed": false
+  },
+  "snowPush": { "storeUrl": null, "releaseStatus": "In development" }
+}
