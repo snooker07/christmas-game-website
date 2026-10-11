@@ -1,0 +1,51 @@
+<section id="christmas-journey" class="christmas-journey" aria-label="A Christmas journey from snowflake to tree to gift">
+  <div class="christmas-stage">
+    <div class="christmas-world" aria-hidden="true"><img src="/assets/christmas-forest.webp" alt="" width="1672" height="941" fetchpriority="high"><div class="world-shade"></div><div class="world-halo"></div></div>
+    <canvas id="christmas-particles" aria-hidden="true"></canvas>
+    <svg class="particle-fallback" id="particle-fallback" viewBox="-160 -170 320 340" aria-hidden="true">
+      <g class="fallback-shape" data-shape="0" fill="none" stroke="currentColor" stroke-width="2"><path d="M0-120V120M-104-60L104 60M-104 60L104-60M0-75L-27-102M0-75L27-102M0 75L-27 102M0 75L27 102M-65-37L-102-27M-65-37L-74-74M65 37L102 27M65 37L74 74M-65 37L-102 27M-65 37L-74 74M65-37L102-27M65-37L74-74"/><circle r="17"/></g>
+      <g class="fallback-shape" data-shape="1" fill="none" stroke="currentColor" stroke-width="2"><path d="M0-125L-55-48H-32L-84 22H-56L-111 99H111L56 22H84L32-48H55ZM-12 99V129H12V99M0-155L8-138L27-136L13-122L17-103L0-113L-17-103L-13-122L-27-136L-8-138Z"/><path d="M-45-35Q0-7 45-35M-68 39Q0 74 68 39"/><circle cx="-21" cy="2" r="5"/><circle cx="41" cy="67" r="5"/><circle cx="-53" cy="65" r="5"/></g>
+      <g class="fallback-shape" data-shape="2" fill="none" stroke="currentColor" stroke-width="2"><path d="M-88-61H88V105H-88ZM-98-78H98V-51H-98ZM-16-78V105H16V-78M0-78C-92-139-84-160-50-133L0-78C87-134 86-156 47-131Z"/></g>
+    </svg>
+    <div class="particle-caption" aria-hidden="true"><span id="particle-label">01 / A LITTLE WINTER WONDER</span><span class="caption-rule"></span><span>MADE OF CHRISTMAS MAGIC</span></div>
+    <article class="journey-scene" data-scene="0">
+      <p class="magic-eyebrow"><span aria-hidden="true">✦</span> WELCOME TO FUNDELITS</p>
+      <h1>A little play.<br>A little <em>Christmas<br>magic.</em></h1>
+      <p class="magic-description">Somewhere between the first snowflake<br>and the glow of the tree, an adventure is waiting.</p>
+      <a class="magic-button" href="#tree-scene" data-jump="1">Follow the magic <span aria-hidden="true">↓</span></a>
+      <p class="magic-footnote">A HOME FOR OUR GAMES &amp; LITTLE ADVENTURES</p>
+    </article>
+    <article id="tree-scene" class="journey-scene" data-scene="1">
+      <p class="magic-eyebrow">02 / LET THE WONDER GROW</p>
+      <h2>A thousand lights.<br><em>One familiar<br>feeling.</em></h2>
+      <p class="magic-description">The quiet of a snowy evening.<br>The warmth of Christmas. The joy of one more round.</p>
+      <a class="magic-button" href="#gift-scene" data-jump="2">Unwrap a little joy <span aria-hidden="true">↓</span></a>
+      <p class="magic-footnote">SMALL MOMENTS. MEMORABLE ADVENTURES.</p>
+    </article>
+    <article id="gift-scene" class="journey-scene" data-scene="2">
+      <p class="magic-eyebrow">03 / SOMETHING GOOD IS WAITING</p>
+      <h2>Your next adventure.<br><em>Wrapped in<br>wonder.</em></h2>
+      <p class="magic-description">Break the ice. Slide into a snowy showdown.<br>Find a little Christmas spirit in our game collection.</p>
+      <a class="magic-button" href="#games">Discover the games <span aria-hidden="true">↓</span></a>
+      <p class="magic-footnote">CHRISTMAS BREAKER &amp; SNOW PUSH</p>
+    </article>
+    <div class="journey-controls">
+      <span class="scroll-cue"><i aria-hidden="true"></i> SCROLL TO UNFOLD THE MAGIC</span>
+      <nav class="journey-steps" aria-label="Christmas journey scenes">
+        <a href="#christmas-journey" data-jump="0" aria-label="Snowflake scene" aria-current="step"><span>01</span></a>
+        <a href="#tree-scene" data-jump="1" aria-label="Christmas tree scene"><span>02</span></a>
+        <a href="#gift-scene" data-jump="2" aria-label="Christmas gift scene"><span>03</span></a>
+      </nav>
+      <button id="motion-toggle" class="motion-toggle" type="button" aria-label="Pause ambient animation" aria-pressed="false" hidden><span aria-hidden="true">Ⅱ</span></button>
+    </div>
+    <a class="skip-journey" href="#games">Go straight to the games <span aria-hidden="true">↗</span></a>
+  </div>
+</section>
+<section id="games" class="magic-collection wrap">
+  <div class="collection-intro"><span class="magic-eyebrow">THE CHRISTMAS COLLECTION</span><h2>A little world.<br><em>A lot to play.</em></h2><p>Two winter adventures, each with its own kind of wonder.</p></div>
+  <div class="magic-game-grid">
+    <article class="magic-game-card"><a class="game-door breaker-door" href="/christmas-breaker/" aria-label="Discover Christmas Breaker"><div class="breaker-screens" aria-hidden="true"><img src="/assets/screen2.png" alt="" width="324" height="570" loading="lazy"><img src="/assets/screen1.png" alt="" width="323" height="571" loading="lazy"></div><span class="game-door-kicker">FESTIVE ARCADE</span><h3>Christmas<br><em>Breaker.</em></h3><span class="door-button">Step into the game <span aria-hidden="true">↗</span></span></a><div class="game-door-copy"><span class="magic-eyebrow">AIM. BOUNCE. BREAK THE ICE.</span><p>Find the perfect angle, clear the board, and keep the Christmas arcade challenge going.</p><div><a href="/christmas-breaker/support/">Support</a><span aria-hidden="true">·</span><a href="/christmas-breaker/privacy/">Privacy</a></div></div></article>
+    <article class="magic-game-card"><a class="game-door snow-door" href="/snow-push/" aria-label="Discover Snow Push"><img src="/assets/snow-push-key-art.webp" alt="Promotional artwork showing Snow Push animal riders on an iceberg" width="1536" height="1024" loading="lazy"><span class="game-door-kicker">IN DEVELOPMENT · IPHONE &amp; IPAD</span><h3>Snow<br><em>Push.</em></h3><span class="door-button">Meet the next adventure <span aria-hidden="true">↗</span></span><span class="door-art-label">Promotional artwork</span></a><div class="game-door-copy"><span class="magic-eyebrow">SLIDE. AIM. RAM.</span><p>A cracking iceberg. Three rivals. Time your rams and be the last rider on the ice.</p><div><a href="/snow-push/support/">Support</a><span aria-hidden="true">·</span><a href="/snow-push/privacy/">Privacy</a></div></div></article>
+  </div>
+  <div class="magic-outro"><span aria-hidden="true">✧</span><h2>Stay for one more round.<br><em>Take the wonder with you.</em></h2><a class="magic-text-link" href="/support/">A helping hand is always close by ↗</a></div>
+</section>

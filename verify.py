@@ -26,7 +26,7 @@ class Document(HTMLParser):
         if tag == 'main': self.main += 1
         if tag == 'h1': self.h1 += 1
         if 'id' in values: self.ids.append(values['id'])
-        if tag == 'img' and not values.get('alt'): errors.append('Image missing alternative text')
+        if tag == 'img' and 'alt' not in values: errors.append('Image missing alternative text')
         for key in ('href','src'):
             if key in values: self.links.append(values[key])
 

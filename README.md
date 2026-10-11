@@ -1,6 +1,10 @@
 # Fundelits website
 
-Responsive static website for fundelits.com. No JavaScript framework, database, cookies, analytics, external fonts, or package installation is needed. Every page is a real HTML document and works without JavaScript. JavaScript only adds the mobile navigation toggle; support FAQs use native HTML details.
+Responsive static website for fundelits.com. No JavaScript framework, database, cookies, analytics, external fonts, or package installation is needed. Every page is a real HTML document and works without JavaScript. JavaScript adds the Christmas journey and mobile navigation; support FAQs use native HTML details.
+
+The home page now opens into a Christmas forest with scroll-driven WebGL particles that morph between a snowflake, a Christmas tree, and a gift. A pause control stops ambient rotation, twinkling, and snowfall while preserving scroll navigation. Reduced-motion preferences show the three scenes as static sections; without WebGL, SVG sculptures accompany the same scroll experience. Rendering pauses when the journey is offscreen or the browser tab is hidden. The game collection is reachable at any point through the header and skip link. Product, support, and privacy pages keep their normal layouts.
+
+Homepage content is in `src/homepage.html`, with styling in `src/christmas.css` and motion in `src/christmas.js`. The Christmas forest was created with the built-in Imagegen tool; `src/media/christmas-forest.webp` is the compressed website asset. The original PNG and generation prompt are retained in the local Unity workspace's `Website/Art/` folder.
 
 ## Build and preview
 

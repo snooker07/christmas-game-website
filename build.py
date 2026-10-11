@@ -39,10 +39,11 @@ def esc(value):
 OUT.mkdir(exist_ok=True)
 assets = OUT / 'assets'
 assets.mkdir(exist_ok=True)
-for name in ('styles.css', 'site.js', 'favicon.svg', 'christmas-art.svg'):
+for name in ('styles.css', 'site.js', 'favicon.svg', 'christmas-art.svg', 'christmas.css', 'christmas.js'):
     shutil.copyfile(ROOT / 'src' / name, assets / name)
 media = ROOT / 'src' / 'media'
 media.mkdir(exist_ok=True)
+shutil.copyfile(media / 'christmas-forest.webp', assets / 'christmas-forest.webp')
 for name, original in [('LilitaOne.ttf', REPO / 'Assets/SnowPush/Resources/UI/LilitaOne.ttf'), ('LilitaOne-OFL.txt', REPO / 'Assets/SnowPush/Fonts/LilitaOne-OFL.txt')]:
     if not (media / name).exists():
         shutil.copyfile(original, media / name)
@@ -103,16 +104,7 @@ def page(path, title, description, content, section='games'):
     pages[path] = (title, description, content, section)
 
 keyart = picture('snow-push-key-art', 'Snow Push promotional illustration of winter animal riders racing on an iceberg', 'width="1536" height="1024" fetchpriority="high"')
-page('/', 'Fundelits — Games & Apps', 'Explore Christmas Breaker and Snow Push. Games by Fundelits, with support and privacy information in one place.', f'''
-<section class="home-hero wrap">
-  <div class="hero-copy"><span class="eyebrow"><i></i> Games &amp; apps by Fundelits</span><h1>A little play.<br>A lot of <em>joy.</em></h1><p>Welcome to our little corner of the game world. Discover Christmas Breaker and meet our next winter adventure, Snow Push.</p><a class="button" href="#games">Explore our games <span aria-hidden="true">↓</span></a><div class="hero-note"><span aria-hidden="true">✳</span> Small moments. Memorable adventures.</div></div>
-  <a class="hero-art" href="/snow-push/" aria-label="Discover Snow Push">{keyart}<div class="art-caption"><div><span class="eyebrow">Next up</span><strong>Snow Push</strong></div><span class="round-arrow" aria-hidden="true">↗</span></div><span class="art-label">Promotional artwork</span></a>
-</section>
-<section id="games" class="games-section wrap"><div class="section-heading"><div><span class="eyebrow">The collection</span><h2>Find your next little adventure.</h2></div><span class="collection-count">01 — 02</span></div>
-<div class="game-grid"><article class="game-card"><a class="game-image christmas-image" href="/christmas-breaker/" aria-label="Discover Christmas Breaker"><img src="/assets/screen1.png" alt="Christmas Breaker gameplay with numbered ice blocks over a festive village" width="323" height="571" loading="lazy"><span class="image-tag">Christmas Breaker</span></a><div class="game-card-body"><span class="eyebrow">Festive arcade</span><h3><a href="/christmas-breaker/">Christmas Breaker <span aria-hidden="true">↗</span></a></h3><p>Aim your shots, clear the ice, and keep the festive arcade challenge going.</p><a class="text-link" href="/christmas-breaker/">Discover the game <span aria-hidden="true">→</span></a></div></article>
-<article class="game-card"><a class="game-image" href="/snow-push/" aria-label="Discover Snow Push">{picture('snow-push-key-art', 'Promotional artwork for Snow Push', 'width="1536" height="1024" loading="lazy"')}<span class="image-tag">In development</span></a><div class="game-card-body"><span class="eyebrow">The next adventure · iPhone &amp; iPad</span><h3><a href="/snow-push/">Snow Push <span aria-hidden="true">↗</span></a></h3><p>Ride into a slippery showdown. Ram your rivals and stay on the cracking ice.</p><a class="text-link" href="/snow-push/">Meet Snow Push <span aria-hidden="true">→</span></a></div></article></div></section>
-<section class="studio-strip wrap"><span class="studio-mark" aria-hidden="true">✳</span><div><span class="eyebrow">Made by Fundelits</span><h2>A home for our games.<br>And the people who play them.</h2></div><p>Looking for help or information about your privacy?<br><a class="text-link" href="/support/">Visit support →</a><br><a class="text-link" href="/privacy/">Read our privacy policies →</a></p></section>
-''')
+page('/', 'Fundelits — A little Christmas magic', 'Follow a snowflake through a magical Christmas forest, then discover Christmas Breaker and Snow Push.', (ROOT / 'src' / 'homepage.html').read_text(encoding='utf-8'))
 
 page('/snow-push/', 'Snow Push — Fundelits', 'An offline winter arcade game in development for iPhone and iPad. Ride a polar cub, ram three computer-controlled rivals, and survive the cracking ice.', f'''
 <section class="product-hero wrap"><a class="back-link" href="/#games">← All games</a><div class="product-intro"><div><span class="eyebrow">The next winter adventure</span><h1>Snow <em>Push.</em></h1></div><div><p>Four riders. One shrinking iceberg.<br>Make your next ram count.</p>{app_button('snowPush')}</div></div><figure class="product-art">{keyart}<figcaption>Promotional artwork</figcaption></figure></section>
@@ -180,16 +172,21 @@ page('/404.html', 'Page not found — Fundelits', 'This page could not be found.
 
 
 home_title, home_description, home_content, home_section = pages['/']
+home_content = (ROOT / 'src' / 'homepage.html').read_text(encoding='utf-8')
 legacy = '<section class="legacy-anchor wrap" id="privacy"><h2>Christmas Breaker privacy policy</h2><p><a href="/christmas-breaker/privacy/">Read the Christmas Breaker privacy policy →</a></p></section><section class="legacy-anchor wrap" id="game"><a href="/christmas-breaker/">Visit Christmas Breaker →</a></section><section class="legacy-anchor wrap" id="gallery"><a href="/christmas-breaker/#gallery">View Christmas Breaker screenshots →</a></section>'
 pages['/'] = (home_title, home_description, home_content + legacy, home_section)
 
 for path, (title, description, content, section) in pages.items():
+    home_head = '<link rel="stylesheet" href="/assets/christmas.css"><script src="/assets/christmas.js" defer></script>' if path == '/' else ''
+    body_class = ' class="home-magic"' if path == '/' else ''
+    theme_color = '#071522' if path == '/' else '#f6f4ed'
+    color_scheme = 'dark' if path == '/' else 'light'
     robots = 'index,follow' if args.production and path != '/404.html' else 'noindex,nofollow'
     canonical = f'<link rel="canonical" href="{esc(CONFIG["productionOrigin"].rstrip("/") + path)}">' if args.production else ''
     nav = ''.join(f'<a href="{url}"' + (' aria-current="page"' if section == key else '') + f'>{label}</a>' for key, label, url in [('games','Games','/#games'),('support','Support','/support/'),('privacy','Privacy','/privacy/')])
     document = f'''<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>{esc(title)}</title><meta name="description" content="{esc(description)}"><meta name="robots" content="{robots}">{canonical}<meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(description)}"><meta property="og:type" content="website"><meta name="theme-color" content="#f6f4ed"><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/styles.css"><script src="/assets/site.js" defer></script></head>
-<body><a class="skip-link" href="#main">Skip to content</a><header class="site-header wrap"><a class="brand" href="/" aria-label="Fundelits home"><span class="brand-mark" aria-hidden="true">✳</span>fundelits<span class="brand-period">.</span></a><button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="site-nav" aria-expanded="false" hidden>Menu <span aria-hidden="true">☰</span></button><nav id="site-nav" aria-label="Main navigation">{nav}</nav></header><main id="main">{content}</main><footer class="site-footer wrap"><div><a class="brand" href="/">fundelits<span class="brand-period">.</span></a><p>A little play. A lot of joy.</p></div><nav aria-label="Footer navigation"><a href="/#games">Games</a><a href="/support/">Support</a><a href="/privacy/">Privacy</a></nav><div class="copyright">© {date.today().year} {esc(CONFIG.get('publisherName') or 'Fundelits')}</div></footer></body></html>'''
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="{color_scheme}"><title>{esc(title)}</title><meta name="description" content="{esc(description)}"><meta name="robots" content="{robots}">{canonical}<meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(description)}"><meta property="og:type" content="website"><meta name="theme-color" content="{theme_color}"><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/styles.css"><script src="/assets/site.js" defer></script>{home_head}</head>
+<body{body_class}><a class="skip-link" href="#main">Skip to content</a><header class="site-header wrap"><a class="brand" href="/" aria-label="Fundelits home"><span class="brand-mark" aria-hidden="true">✳</span>fundelits<span class="brand-period">.</span></a><button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="site-nav" aria-expanded="false" hidden>Menu <span aria-hidden="true">☰</span></button><nav id="site-nav" aria-label="Main navigation">{nav}</nav></header><main id="main">{content}</main><footer class="site-footer wrap"><div><a class="brand" href="/">fundelits<span class="brand-period">.</span></a><p>A little play. A lot of joy.</p></div><nav aria-label="Footer navigation"><a href="/#games">Games</a><a href="/support/">Support</a><a href="/privacy/">Privacy</a></nav><div class="copyright">© {date.today().year} {esc(CONFIG.get('publisherName') or 'Fundelits')}</div></footer></body></html>'''
     destination = OUT / ('index.html' if path == '/' else path.lstrip('/') if path.endswith('.html') else path.strip('/') + '/index.html')
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_text(document, encoding='utf-8')
