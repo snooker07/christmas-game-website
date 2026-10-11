@@ -1,0 +1,5 @@
+.openai/.local/
+.vercel/
+*.zip
+__pycache__/
+qa/
