@@ -6,6 +6,8 @@ The home page now opens into a Christmas forest with scroll-driven WebGL particl
 
 Homepage content is in `src/homepage.html`, with styling in `src/christmas.css` and motion in `src/christmas.js`. The Christmas forest was created with the built-in Imagegen tool; `src/media/christmas-forest.webp` is the compressed website asset. The original PNG and generation prompt are retained in the local Unity workspace's `Website/Art/` folder.
 
+All product, support, privacy, and error pages share the homepage's dark navy palette through `src/night.css`. Christmas Breaker and Snow Push product pages also use `src/ambient.js` for sparse particles and faint constellations behind their content. Christmas Breaker uses warm gold and Snow Push uses icy blue. Scrolling changes the background's parallax. Each game page has a motion pause control; reduced-motion preferences disable the ambient layer, and rendering stops in hidden tabs. Support and privacy pages remain static for comfortable reading.
+
 ## Build and preview
 
 From this directory, run `python build.py`, then `./start-preview.ps1` (or `python -m http.server 4173 --bind 127.0.0.1 --directory dist`). Open http://127.0.0.1:4173/ . The selected font and optimized artwork are retained under `src/media/`, so future builds do not need the Unity game repository or Pillow. Pillow is optional for the first image conversion.

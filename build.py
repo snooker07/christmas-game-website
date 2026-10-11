@@ -39,7 +39,7 @@ def esc(value):
 OUT.mkdir(exist_ok=True)
 assets = OUT / 'assets'
 assets.mkdir(exist_ok=True)
-for name in ('styles.css', 'site.js', 'favicon.svg', 'christmas-art.svg', 'christmas.css', 'christmas.js'):
+for name in ('styles.css', 'site.js', 'favicon.svg', 'christmas-art.svg', 'christmas.css', 'christmas.js', 'night.css', 'ambient.js'):
     shutil.copyfile(ROOT / 'src' / name, assets / name)
 media = ROOT / 'src' / 'media'
 media.mkdir(exist_ok=True)
@@ -177,16 +177,18 @@ legacy = '<section class="legacy-anchor wrap" id="privacy"><h2>Christmas Breaker
 pages['/'] = (home_title, home_description, home_content + legacy, home_section)
 
 for path, (title, description, content, section) in pages.items():
-    home_head = '<link rel="stylesheet" href="/assets/christmas.css"><script src="/assets/christmas.js" defer></script>' if path == '/' else ''
-    body_class = ' class="home-magic"' if path == '/' else ''
-    theme_color = '#071522' if path == '/' else '#f6f4ed'
-    color_scheme = 'dark' if path == '/' else 'light'
+    is_game = path in ('/christmas-breaker/', '/snow-push/')
+    home_head = '<link rel="stylesheet" href="/assets/christmas.css"><script src="/assets/christmas.js" defer></script>' if path == '/' else '<link rel="stylesheet" href="/assets/night.css">' + ('<script src="/assets/ambient.js" defer></script>' if is_game else '')
+    body_class = ' class="home-magic"' if path == '/' else ' class="inner-night' + (' game-breaker' if path == '/christmas-breaker/' else ' game-snow' if path == '/snow-push/' else '') + '"'
+    ambient_markup = '<canvas id="ambient-particles" class="ambient-canvas" aria-hidden="true"></canvas><button id="ambient-motion" class="ambient-motion" type="button" aria-label="Pause background animation" aria-pressed="false" hidden><span data-motion-icon aria-hidden="true">Ⅱ</span><span data-motion-label>Background magic</span></button>' if is_game else ''
+    theme_color = '#071522'
+    color_scheme = 'dark'
     robots = 'index,follow' if args.production and path != '/404.html' else 'noindex,nofollow'
     canonical = f'<link rel="canonical" href="{esc(CONFIG["productionOrigin"].rstrip("/") + path)}">' if args.production else ''
     nav = ''.join(f'<a href="{url}"' + (' aria-current="page"' if section == key else '') + f'>{label}</a>' for key, label, url in [('games','Games','/#games'),('support','Support','/support/'),('privacy','Privacy','/privacy/')])
     document = f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="{color_scheme}"><title>{esc(title)}</title><meta name="description" content="{esc(description)}"><meta name="robots" content="{robots}">{canonical}<meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(description)}"><meta property="og:type" content="website"><meta name="theme-color" content="{theme_color}"><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/styles.css"><script src="/assets/site.js" defer></script>{home_head}</head>
-<body{body_class}><a class="skip-link" href="#main">Skip to content</a><header class="site-header wrap"><a class="brand" href="/" aria-label="Fundelits home"><span class="brand-mark" aria-hidden="true">✳</span>fundelits<span class="brand-period">.</span></a><button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="site-nav" aria-expanded="false" hidden>Menu <span aria-hidden="true">☰</span></button><nav id="site-nav" aria-label="Main navigation">{nav}</nav></header><main id="main">{content}</main><footer class="site-footer wrap"><div><a class="brand" href="/">fundelits<span class="brand-period">.</span></a><p>A little play. A lot of joy.</p></div><nav aria-label="Footer navigation"><a href="/#games">Games</a><a href="/support/">Support</a><a href="/privacy/">Privacy</a></nav><div class="copyright">© {date.today().year} {esc(CONFIG.get('publisherName') or 'Fundelits')}</div></footer></body></html>'''
+<body{body_class}>{ambient_markup}<a class="skip-link" href="#main">Skip to content</a><header class="site-header wrap"><a class="brand" href="/" aria-label="Fundelits home"><span class="brand-mark" aria-hidden="true">✳</span>fundelits<span class="brand-period">.</span></a><button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="site-nav" aria-expanded="false" hidden>Menu <span aria-hidden="true">☰</span></button><nav id="site-nav" aria-label="Main navigation">{nav}</nav></header><main id="main">{content}</main><footer class="site-footer wrap"><div><a class="brand" href="/">fundelits<span class="brand-period">.</span></a><p>A little play. A lot of joy.</p></div><nav aria-label="Footer navigation"><a href="/#games">Games</a><a href="/support/">Support</a><a href="/privacy/">Privacy</a></nav><div class="copyright">© {date.today().year} {esc(CONFIG.get('publisherName') or 'Fundelits')}</div></footer></body></html>'''
     destination = OUT / ('index.html' if path == '/' else path.lstrip('/') if path.endswith('.html') else path.strip('/') + '/index.html')
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_text(document, encoding='utf-8')
