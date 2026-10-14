@@ -1,0 +1,91 @@
+{
+  "id": "earth-en",
+  "slug": "earth",
+  "language": "en",
+  "version": 1,
+  "title": "The shadow that measured a world",
+  "summary": "Eratosthenes could not travel around the whole Earth. So he let the Sun help him.",
+  "tags": [
+    "History",
+    "Discovery"
+  ],
+  "minutes": 3,
+  "coverAsset": "earth",
+  "cover": null,
+  "audio": null,
+  "sources": [
+    {
+      "title": "Smithsonian: Measurement of the Earth",
+      "url": "https://www.americanhistory.si.edu/ne/collections/object/nmah_694634"
+    },
+    {
+      "title": "American Physical Society: Eratosthenes Measures Earth",
+      "url": "https://www.aps.org/apsnews/2006/06/eratosthenes-measures-earth"
+    }
+  ],
+  "chapters": [
+    {
+      "id": "earth-en-c1",
+      "title": "Two cities, one Sun",
+      "paragraphs": [
+        {
+          "id": "earth-en-c1-p1",
+          "text": "In the Egyptian city of Alexandria, a scholar named Eratosthenes wanted to know how far it was around Earth. He lived more than two thousand years ago, long before anyone could photograph our planet from space.",
+          "spokenText": null
+        },
+        {
+          "id": "earth-en-c1-p2",
+          "text": "He learned of an unusual observation in Syene, far to the south. At noon near the summer solstice, sunlight could shine straight down into a well. The Sun was almost directly overhead.",
+          "spokenText": null
+        },
+        {
+          "id": "earth-en-c1-p3",
+          "text": "In Alexandria at the same time, an upright object still cast a shadow. The same Sun was lighting both places. The difference held a clue.",
+          "spokenText": null
+        }
+      ]
+    },
+    {
+      "id": "earth-en-c2",
+      "title": "A curve you can measure",
+      "paragraphs": [
+        {
+          "id": "earth-en-c2-p1",
+          "text": "Imagine two tiny sticks standing on a ball, some distance apart. Because the surface curves, the sticks point in slightly different directions. Sunlight arriving from far away meets them at different angles.",
+          "spokenText": null
+        },
+        {
+          "id": "earth-en-c2-p2",
+          "text": "Eratosthenes measured the angle revealed by the shadow at Alexandria. It was about one fiftieth of a full circle. In a simplified model, the stretch from Syene to Alexandria therefore covered about one fiftieth of the way around Earth.",
+          "spokenText": null
+        },
+        {
+          "id": "earth-en-c2-p3",
+          "text": "He also needed the distance between the cities. With that estimate, he could multiply by fifty to work out the whole circle. One small shadow had become a measuring tool for an entire planet.",
+          "spokenText": null
+        }
+      ]
+    },
+    {
+      "id": "earth-en-c3",
+      "title": "A bigger view",
+      "paragraphs": [
+        {
+          "id": "earth-en-c3-p1",
+          "text": "The old accounts give the distance in a unit called a stadion. Because its exact length is uncertain, we cannot translate his result into one perfectly agreed modern number. The clever method, however, is clear.",
+          "spokenText": null
+        },
+        {
+          "id": "earth-en-c3-p2",
+          "text": "He did not discover that Earth was round; other thinkers already understood that. He worked out a way to measure its size.",
+          "spokenText": null
+        },
+        {
+          "id": "earth-en-c3-p3",
+          "text": "A shadow, a distance, and an idea were enough to reach beyond what one person could see. The world was vast, but it could be understood, piece by careful piece.",
+          "spokenText": null
+        }
+      ]
+    }
+  ]
+}

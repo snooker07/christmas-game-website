@@ -1,0 +1,247 @@
+{
+  "id": "the-clock-that-crossed-the-ocean-en",
+  "slug": "the-clock-that-crossed-the-ocean",
+  "language": "en",
+  "version": 1,
+  "title": "The Clock That Crossed the Ocean",
+  "summary": "In the early eighteenth century, a ship could leave England, sail for weeks, and still have a dangerous uncertainty hanging over its deck.",
+  "tags": [
+    "History"
+  ],
+  "minutes": 7,
+  "coverAsset": "earth",
+  "cover": null,
+  "chapters": [
+    {
+      "id": "the-clock-that-crossed-the-ocean-en-c1",
+      "title": "The Clock That Crossed the Ocean",
+      "paragraphs": [
+        {
+          "id": "the-clock-that-crossed-the-ocean-en-p-af4784dea148",
+          "text": "In the early eighteenth century, a ship could leave England, sail for weeks, and still have a dangerous uncertainty hanging over its deck.",
+          "spokenText": null
+        },
+        {
+          "id": "the-clock-that-crossed-the-ocean-en-p-5f53bfcedf56",
+          "text": "Its sailors might know how far north or south they were. On a clear day, they could measure the height of the Sun above the horizon. At night, certain stars helped them find their latitude.",
+          "spokenText": null
+        },
+        {
+          "id": "the-clock-that-crossed-the-ocean-en-p-66bde42a0057",
+          "text": "But their position east or west was much harder to discover.",
+          "spokenText": null
+        },
+        {
+          "id": "the-clock-that-crossed-the-ocean-en-p-0e529335a7e0",
+          "text": "That position was called longitude. Without it, a captain could mistake open water for the approach to a coast, or sail past an island carrying the fresh water his crew desperately needed.",
+          "spokenText": null
+        },
+        {
+          "id": "the-clock-that-crossed-the-ocean-en-p-bbc51db4fd5f",
+          "text": "The ocean had no milestones. A ship's speed could be estimated, but currents carried it sideways and storms forced it off course. Small errors collected over a long voyage until the position marked on a chart was far from the ship's real position.",
+          "spokenText": null
+        },
+        {
+          "id": "the-clock-that-crossed-the-ocean-en-p-6ef424fcfd49",
+          "text": "In 1714, the British government offered large rewards for a practical way to find longitude at sea. The greatest reward was twenty thousand pounds, an extraordinary sum.",
+          "spokenText": null
+        },
+        {
+          "id": "the-clock-that-crossed-the-ocean-en-p-3fc859bf4ff8",
+          "text": "Some astronomers searched for an answer in the Moon and stars.",
+          "spokenText": null
+        },
+        {
+          "id": "the-clock-that-crossed-the-ocean-en-p-ea51275f213f",
+          "text": "A carpenter named John Harrison searched inside a clock.",
+          "spokenText": null
+        },
+        {
+          "id": "the-clock-that-crossed-the-ocean-en-p-73e11783c483",
+          "text": "Harrison had grown up working with wood. He learned to build clocks, and he paid close attention to the things that made them lose time. A tiny change repeated thousands of times could turn a good clock into a bad one.",
+          "spokenText": null
+        },
+        {
+          "id": "the-clock-that-crossed-the-ocean-en-p-414388422701",
+          "text": "The connection between a clock and a ship's position came from Earth's daily turn.",
+          "spokenText": null
+        },
+        {
+          "id": "the-clock-that-crossed-the-ocean-en-p-7b890f01213a",
+          "text": "Earth turns through a full circle of 360 degrees in about twenty-four hours. In one hour, it turns fifteen degrees.",
+          "spokenText": null
+        },
+        {
+          "id": "the-clock-that-crossed-the-ocean-en-p-173e1f0cb226",
+          "text": "If a sailor knew the time at a chosen home port and compared it with the local time at the ship, the difference would reveal how far east or west the ship had travelled.",
+          "spokenText": null
+        },
+        {
+          "id": "the-clock-that-crossed-the-ocean-en-p-d358cd0cba15",
+          "text": "Suppose the Sun reached its highest point over the ship when a clock keeping home time showed two in the afternoon. Noon had arrived at the home port two hours earlier. The ship was about thirty degrees west of that port.",
+          "spokenText": null
+        },
+        {
+          "id": "the-clock-that-crossed-the-ocean-en-p-3f32f4f5176d",
+          "text": "The idea was clear. Making a clock that could do the job was another matter.",
+          "spokenText": null
+        },
+        {
+          "id": "the-clock-that-crossed-the-ocean-en-p-381f60e82d73",
+          "text": "A clock ashore stood in a relatively steady place. A ship rolled, pitched, shuddered, and sometimes struck waves hard enough to throw people off their feet.",
+          "spokenText": null
+        },
+        {
+          "id": "the-clock-that-crossed-the-ocean-en-p-bc0b8533739c",
+          "text": "Many ordinary clocks depended on a swinging pendulum. A pendulum that worked well in a house behaved very differently on a moving deck.",
+          "spokenText": null
+        },
+        {
+          "id": "the-clock-that-crossed-the-ocean-en-p-3d919012e272",
+          "text": "Temperature created another difficulty. Metal parts expanded in warm weather and contracted in cold weather. Those changes altered the timing of a mechanism, even when they were too small to see.",
+          "spokenText": null
+        },
+        {
+          "id": "the-clock-that-crossed-the-ocean-en-p-679e2ab75245",
+          "text": "Sea air brought dampness and salt. Oil changed as it aged. The friction between moving parts could change too.",
+          "spokenText": null
+        },
+        {
+          "id": "the-clock-that-crossed-the-ocean-en-p-99525bc0d704",
+          "text": "Harrison had to solve several problems at once, because a clock that failed in only one of them could send a ship miles from its expected position.",
+          "spokenText": null
+        },
+        {
+          "id": "the-clock-that-crossed-the-ocean-en-p-c637194c1fb5",
+          "text": "His first large sea clock, later called H1, did not look like a pocket watch. It was a complicated machine with brass wheels and linked balances. Instead of relying on an ordinary pendulum, Harrison arranged moving parts to counter some of the effects of the ship's motion.",
+          "spokenText": null
+        },
+        {
+          "id": "the-clock-that-crossed-the-ocean-en-p-214bed1c396b",
+          "text": "In 1736, H1 travelled to Lisbon for a sea trial.",
+          "spokenText": null
+        },
+        {
+          "id": "the-clock-that-crossed-the-ocean-en-p-69603b05ee1a",
+          "text": "It performed well enough to encourage further work, but Harrison did not regard it as finished. He began another timekeeper, and then another.",
+          "spokenText": null
+        },
+        {
+          "id": "the-clock-that-crossed-the-ocean-en-p-2a423bebc5c0",
+          "text": "Years passed.",
+          "spokenText": null
+        },
+        {
+          "id": "the-clock-that-crossed-the-ocean-en-p-5736e885b994",
+          "text": "Each machine solved some problems while revealing others. Harrison's work required more than assembling wheels. He had to notice an error, understand what caused it, change the design, and test the result over long periods.",
+          "spokenText": null
+        },
+        {
+          "id": "the-clock-that-crossed-the-ocean-en-p-239f40c3f38d",
+          "text": "Eventually, his approach changed dramatically.",
+          "spokenText": null
+        },
+        {
+          "id": "the-clock-that-crossed-the-ocean-en-p-52f589504126",
+          "text": "The fourth timekeeper, H4, was much smaller than the earlier machines. It looked like an oversized silver watch. Inside its case, carefully made parts worked together at a rapid, regular pace.",
+          "spokenText": null
+        },
+        {
+          "id": "the-clock-that-crossed-the-ocean-en-p-250781771f00",
+          "text": "Its size mattered. A useful instrument had to travel, and a small timekeeper was easier to place aboard a ship than a large experimental machine.",
+          "spokenText": null
+        },
+        {
+          "id": "the-clock-that-crossed-the-ocean-en-p-13706eb370f4",
+          "text": "But appearance was not proof. H4 had to cross an ocean.",
+          "spokenText": null
+        },
+        {
+          "id": "the-clock-that-crossed-the-ocean-en-p-295ae08bb424",
+          "text": "In 1761, Harrison's son William took it on a voyage to Jamaica. William looked after the instrument while the ship carried it through the conditions that had defeated other clocks.",
+          "spokenText": null
+        },
+        {
+          "id": "the-clock-that-crossed-the-ocean-en-p-6bbc566351c8",
+          "text": "The timekeeper kept remarkably close to the required time. Its error was small enough to show that Harrison's method could determine longitude with the accuracy demanded by the highest reward.",
+          "spokenText": null
+        },
+        {
+          "id": "the-clock-that-crossed-the-ocean-en-p-79070511f3a7",
+          "text": "That did not end the argument.",
+          "spokenText": null
+        },
+        {
+          "id": "the-clock-that-crossed-the-ocean-en-p-d0bdbbfc9f21",
+          "text": "The Board of Longitude needed to know whether another instrument could be made to work equally well. A single extraordinary watch might prove a principle without yet providing a reliable system for an entire navy.",
+          "spokenText": null
+        },
+        {
+          "id": "the-clock-that-crossed-the-ocean-en-p-a020f9dce8ae",
+          "text": "There were also disagreements about further trials, payment, and how fully Harrison should reveal the details of his invention.",
+          "spokenText": null
+        },
+        {
+          "id": "the-clock-that-crossed-the-ocean-en-p-46938dd7c187",
+          "text": "Harrison, now an old man, had spent decades on the problem. To him, the successful crossing was powerful evidence. To the officials, testing and reproduction still mattered.",
+          "spokenText": null
+        },
+        {
+          "id": "the-clock-that-crossed-the-ocean-en-p-f078dbeb2968",
+          "text": "Other craftsmen examined the design. Larcum Kendall made a copy of H4, known as K1. That timekeeper later travelled with James Cook and helped demonstrate the value of accurate timekeeping on long voyages.",
+          "spokenText": null
+        },
+        {
+          "id": "the-clock-that-crossed-the-ocean-en-p-784ad1726f6a",
+          "text": "Harrison eventually received substantial payments, including a final award arranged through Parliament in 1773. His reward did not arrive as one simple victory on the day his watch returned from Jamaica.",
+          "spokenText": null
+        },
+        {
+          "id": "the-clock-that-crossed-the-ocean-en-p-b7d49652ef67",
+          "text": "Nor did every ship immediately receive a perfect sea watch. Early marine timekeepers were expensive and difficult to make. Astronomical methods remained useful, and improvements in manufacturing took time.",
+          "spokenText": null
+        },
+        {
+          "id": "the-clock-that-crossed-the-ocean-en-p-e4dffc4e2a8b",
+          "text": "Gradually, accurate marine clocks became more widely available.",
+          "spokenText": null
+        },
+        {
+          "id": "the-clock-that-crossed-the-ocean-en-p-b7a878bcb950",
+          "text": "A captain could compare the ship's local time with the time kept by an instrument carried from home. An invisible difference between two moments became a distance on a chart.",
+          "spokenText": null
+        },
+        {
+          "id": "the-clock-that-crossed-the-ocean-en-p-51531e06995b",
+          "text": "Harrison's surviving timekeepers can still be seen at Greenwich. The great brass balances of his early machines and the compact silver case of H4 belong to the same long effort.",
+          "spokenText": null
+        },
+        {
+          "id": "the-clock-that-crossed-the-ocean-en-p-85c4d0723127",
+          "text": "The smallest part of that effort was measured in seconds.",
+          "spokenText": null
+        },
+        {
+          "id": "the-clock-that-crossed-the-ocean-en-p-746c62627f22",
+          "text": "Its result was measured across oceans.",
+          "spokenText": null
+        }
+      ]
+    }
+  ],
+  "audio": null,
+  "sources": [
+    {
+      "title": "Royal Museums Greenwich: Harrison and the longitude problem",
+      "url": "https://www.rmg.co.uk/stories/time/harrisons-clocks-longitude-problem"
+    },
+    {
+      "title": "Royal Museums Greenwich: H4",
+      "url": "https://www.rmg.co.uk/collections/objects/rmgc-object-79142"
+    },
+    {
+      "title": "Science Museum Group: John Harrison",
+      "url": "https://collection.sciencemuseumgroup.org.uk/people/ap21350/harrison-john"
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "id": "pyramid-en",
+  "slug": "pyramid",
+  "language": "en",
+  "version": 1,
+  "title": "The mountain people made",
+  "summary": "Before it became a wonder of the world, the Great Pyramid was a problem waiting to be solved.",
+  "tags": [
+    "History",
+    "Discovery"
+  ],
+  "minutes": 3,
+  "coverAsset": "pyramid",
+  "cover": null,
+  "audio": null,
+  "sources": [
+    {
+      "title": "Smithsonian: The Egyptian Pyramid",
+      "url": "https://www.si.edu/spotlight/ancient-egypt/pyramid"
+    }
+  ],
+  "chapters": [
+    {
+      "id": "pyramid-en-c1",
+      "title": "A shape against the sky",
+      "paragraphs": [
+        {
+          "id": "pyramid-en-c1-p1",
+          "text": "Picture the Nile slipping past green fields, with the dry desert stretching beyond them. Above that desert stands a shape so large that it seems to belong to the landscape itself: a pyramid.",
+          "spokenText": null
+        },
+        {
+          "id": "pyramid-en-c1-p2",
+          "text": "About 4,500 years ago, Egypt’s king Khufu ordered the Great Pyramid built at Giza. It was intended as his tomb. In ancient Egyptian belief, preparing for life after death was an important task. For a king, that preparation could become a whole building project.",
+          "spokenText": null
+        },
+        {
+          "id": "pyramid-en-c1-p3",
+          "text": "But an enormous idea does not lift a single stone. The people who built the pyramid had to turn an ambition into thousands of practical jobs.",
+          "spokenText": null
+        }
+      ]
+    },
+    {
+      "id": "pyramid-en-c2",
+      "title": "A mountain of small jobs",
+      "paragraphs": [
+        {
+          "id": "pyramid-en-c2-p1",
+          "text": "Stone had to be cut, moved, and carefully placed. Teams needed tools, food, and places to work. Builders had to keep the growing structure level and its sides pointing in the right directions.",
+          "spokenText": null
+        },
+        {
+          "id": "pyramid-en-c2-p2",
+          "text": "The pyramid narrowed as it rose. Each layer supported the next, carrying its weight down toward the broad base. From the ground, the shape looks simple; making that shape from heavy blocks required organization and patient craftsmanship.",
+          "spokenText": null
+        },
+        {
+          "id": "pyramid-en-c2-p3",
+          "text": "Marks left by workers on some stones preserve the names of work teams. Those small traces remind us that this huge monument was made by people working together.",
+          "spokenText": null
+        }
+      ]
+    },
+    {
+      "id": "pyramid-en-c3",
+      "title": "The people inside the wonder",
+      "paragraphs": [
+        {
+          "id": "pyramid-en-c3-p1",
+          "text": "When it was finished, pale limestone covered the pyramid’s outside. Much of that smooth casing has since disappeared, leaving the stepped stone surface we often see today.",
+          "spokenText": null
+        },
+        {
+          "id": "pyramid-en-c3-p2",
+          "text": "We know the pyramid was built, and we can study the stones. We do not yet know every detail of how the builders raised them. Different ramp designs are among the possibilities researchers investigate.",
+          "spokenText": null
+        },
+        {
+          "id": "pyramid-en-c3-p3",
+          "text": "The wonder is more than its size. It is the cooperation inside it: countless separate jobs fitted into one great plan. A mountain of stone began with people solving one problem, and then the next.",
+          "spokenText": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "id": "fireflies-en",
+  "slug": "fireflies",
+  "language": "en",
+  "version": 1,
+  "title": "The little lights in the dark",
+  "summary": "A tiny flash in the darkness is more than a pretty light. It can be a message.",
+  "tags": [
+    "Nature",
+    "Animals"
+  ],
+  "minutes": 3,
+  "coverAsset": "fireflies",
+  "cover": null,
+  "audio": null,
+  "sources": [
+    {
+      "title": "Smithsonian Science Education Center: Expedition Insects",
+      "url": "https://ssec.si.edu/sites/default/files/other/insects/Expedition%20Insects-.pdf"
+    },
+    {
+      "title": "Smithsonian: How animals communicate",
+      "url": "https://ssec.si.edu/communication"
+    }
+  ],
+  "chapters": [
+    {
+      "id": "fireflies-en-c1",
+      "title": "The garden wakes up",
+      "paragraphs": [
+        {
+          "id": "fireflies-en-c1-p1",
+          "text": "Imagine a summer garden as daylight fades. The bright colors soften, leaves become silhouettes, and a tiny light flickers above the grass. Then another glows nearby.",
+          "spokenText": null
+        },
+        {
+          "id": "fireflies-en-c1-p2",
+          "text": "Those little lanterns belong to fireflies. Despite their name, they are beetles. Many kinds can produce light in special organs near the end of their bodies.",
+          "spokenText": null
+        },
+        {
+          "id": "fireflies-en-c1-p3",
+          "text": "A lamp needs electricity from somewhere outside it. A firefly carries the ingredients for its light within its own body. The glow begins with chemistry.",
+          "spokenText": null
+        }
+      ]
+    },
+    {
+      "id": "fireflies-en-c2",
+      "title": "A lantern made of life",
+      "paragraphs": [
+        {
+          "id": "fireflies-en-c2-p1",
+          "text": "Inside a firefly, a substance called luciferin takes part in a reaction involving oxygen. An enzyme called luciferase helps the reaction happen. Energy is released as light.",
+          "spokenText": null
+        },
+        {
+          "id": "fireflies-en-c2-p2",
+          "text": "Making light through a living chemical process is called bioluminescence. The word sounds large, but the idea fits in a small beetle: life making a glow.",
+          "spokenText": null
+        },
+        {
+          "id": "fireflies-en-c2-p3",
+          "text": "The flashing can carry information. Many fireflies use patterns of light to find mates. A flash followed by a pause can be part of a signal; another firefly may answer. The dark garden becomes a place where light helps living things communicate.",
+          "spokenText": null
+        }
+      ]
+    },
+    {
+      "id": "fireflies-en-c3",
+      "title": "Messages in the evening",
+      "paragraphs": [
+        {
+          "id": "fireflies-en-c3-p1",
+          "text": "Different species have different habits. Some flash, some shine more steadily, and some adult fireflies do not use a visible light display at all. Nature has many ways of solving the same problem.",
+          "spokenText": null
+        },
+        {
+          "id": "fireflies-en-c3-p2",
+          "text": "Imagine watching quietly from a path. Instead of seeing random sparks, you might begin to notice patterns: a glow, a pause, another glow. You are looking at a small piece of animal communication.",
+          "spokenText": null
+        },
+        {
+          "id": "fireflies-en-c3-p3",
+          "text": "The garden has not turned into a fairy tale. It is full of real living things doing remarkable things. Sometimes a little knowledge makes an ordinary evening feel even more wonderful.",
+          "spokenText": null
+        }
+      ]
+    }
+  ]
+}

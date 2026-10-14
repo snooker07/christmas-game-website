@@ -1,0 +1,91 @@
+{
+  "id": "moon-en",
+  "slug": "moon",
+  "language": "en",
+  "version": 1,
+  "title": "The night the Moon came closer",
+  "summary": "Three travelers left Earth. Two would land on the Moon. All three needed a way home.",
+  "tags": [
+    "Space",
+    "Science"
+  ],
+  "minutes": 3,
+  "coverAsset": "moon",
+  "cover": null,
+  "audio": null,
+  "sources": [
+    {
+      "title": "NASA: Apollo 11 Mission Overview",
+      "url": "https://www.nasa.gov/history/apollo-11-mission-overview/"
+    },
+    {
+      "title": "NASA JPL: The Apollo Moon landing",
+      "url": "https://www.jpl.nasa.gov/edu/resources/teachable-moment/celebrate-the-50th-anniversary-of-nasas-apollo-moon-landing-with-educational-resources-and-projects-for-kids/"
+    }
+  ],
+  "chapters": [
+    {
+      "id": "moon-en-c1",
+      "title": "A journey with three travelers",
+      "paragraphs": [
+        {
+          "id": "moon-en-c1-p1",
+          "text": "On July 16, 1969, a Saturn V rocket lifted Neil Armstrong, Buzz Aldrin, and Michael Collins away from Earth. Their mission was called Apollo 11. Ahead lay the Moon, a world with no air to breathe and no oceans to cross.",
+          "spokenText": null
+        },
+        {
+          "id": "moon-en-c1-p2",
+          "text": "Their spacecraft had different parts for different jobs. Columbia was the command module, where the astronauts could travel together. A service module supplied important things such as power and propulsion. Eagle, the lunar module, was built for the landing.",
+          "spokenText": null
+        },
+        {
+          "id": "moon-en-c1-p3",
+          "text": "Taking every part down to the Moon would have meant carrying extra weight. The smaller Eagle could do the landing job while Columbia stayed in orbit.",
+          "spokenText": null
+        }
+      ]
+    },
+    {
+      "id": "moon-en-c2",
+      "title": "Eagle finds a place to rest",
+      "paragraphs": [
+        {
+          "id": "moon-en-c2-p1",
+          "text": "On July 20, Armstrong and Aldrin separated from Columbia in Eagle. Collins remained above, circling the Moon. His part of the journey mattered just as much: the landing crew would need to meet him again.",
+          "spokenText": null
+        },
+        {
+          "id": "moon-en-c2-p2",
+          "text": "Eagle used its rocket engine to slow its descent. As the surface came close, Armstrong guided it away from an area with large rocks toward a clearer landing spot.",
+          "spokenText": null
+        },
+        {
+          "id": "moon-en-c2-p3",
+          "text": "The spacecraft touched down in the Sea of Tranquility. Despite its name, there was no water there: it was a broad, dark region of the Moon’s surface. Soon, Armstrong and then Aldrin stepped outside. Their suits supplied the air their bodies needed.",
+          "spokenText": null
+        }
+      ]
+    },
+    {
+      "id": "moon-en-c3",
+      "title": "The road back home",
+      "paragraphs": [
+        {
+          "id": "moon-en-c3-p1",
+          "text": "The astronauts collected rock samples and set up scientific equipment. But a successful landing was only part of the adventure. They still had to leave.",
+          "spokenText": null
+        },
+        {
+          "id": "moon-en-c3-p2",
+          "text": "Eagle had two stages. Its lower part stayed on the Moon, while its upper part lifted off with the two astronauts. Leaving weight behind made the return possible. They joined Collins and Columbia in orbit.",
+          "spokenText": null
+        },
+        {
+          "id": "moon-en-c3-p3",
+          "text": "On July 24, the crew splashed down in the Pacific Ocean. Three people had traveled together, two had walked on another world, and all three had returned. A daring dream had worked because each small part had a careful job.",
+          "spokenText": null
+        }
+      ]
+    }
+  ]
+}
