@@ -55,6 +55,11 @@ images = {
     'snow-push-key-art': REPO / 'Assets/illustrations/01-snow-push-key-art.png',
     'snow-push-gameplay': REPO / 'Releases/Metadata/1.0.0/Preview-iPhone/05-match-hud.png',
     'snow-push-settings': REPO / 'Releases/Metadata/1.0.0/Preview-iPhone/03-settings.png',
+    # Versioned web assets are retained in src/media for builds outside the Unity workspace.
+    'snow-push-arctic-20261101': REPO / 'Versions/Version13-AppStore-First/Assets/SnowPush/Resources/UI/ArcticMenu.png',
+    'snow-push-menu-20261101': REPO.parent.parent / 'Mac-Setup/QA-FirstRelease-Touch/01-main-menu.png',
+    'snow-push-gameplay-20261101': REPO.parent.parent / 'Mac-Setup/QA-FirstRelease-Touch/05-match-hud.png',
+    'snow-push-settings-20261101': REPO.parent.parent / 'Mac-Setup/QA-FirstRelease-Touch/03-settings.png',
 }
 try:
     from PIL import Image
@@ -106,14 +111,14 @@ pages = {}
 def page(path, title, description, content, section='games'):
     pages[path] = (title, description, content, section)
 
-keyart = picture('snow-push-key-art', 'Snow Push promotional illustration of winter animal riders racing on an iceberg', 'width="1536" height="1024" fetchpriority="high"')
+keyart = picture('snow-push-arctic-20261101', 'Snow Push Arctic artwork: a fox riding a polar bear on a snowy ice island', 'width="1536" height="864" fetchpriority="high"')
 page('/', 'Fundelits — A little Christmas magic', 'Follow a snowflake through a magical Christmas forest, then discover Christmas Breaker and Snow Push.', (ROOT / 'src' / 'homepage.html').read_text(encoding='utf-8'))
 
 page('/snow-push/', 'Snow Push — Fundelits', 'An offline winter arcade game in development for iPhone and iPad. Ride a polar cub, ram three computer-controlled rivals, and survive the cracking ice.', f'''
 <section class="product-hero wrap"><a class="back-link" href="/#games">← All games</a><div class="product-intro"><div><span class="eyebrow">The next winter adventure</span><h1>Snow <em>Push.</em></h1></div><div><p>Four riders. One shrinking iceberg.<br>Make your next ram count.</p>{app_button('snowPush')}</div></div><figure class="product-art">{keyart}<figcaption>Promotional artwork</figcaption></figure></section>
 <section class="feature-section wrap"><div><span class="eyebrow">Stay on the ice</span><h2>Cold arena.<br>Warm competition.</h2></div><div class="feature-copy"><p>Hop onto your polar cub, steer across the frozen arena, and time your rams to send rival riders into the sea. As the ice cracks and breaks away, every round gets tighter.</p><p>The first version is designed for offline matches against three computer-controlled rivals, with no advertisements or in-app purchases.</p></div></section>
 <section class="facts-grid wrap"><article><span class="fact-number">01</span><h3>Slide. Aim. Ram.</h3><p>Simple steering and a dedicated Ram button keep the action within reach.</p></article><article><span class="fact-number">02</span><h3>The ice won’t wait.</h3><p>A shrinking iceberg, falling ice, and real gaps make every move matter.</p></article><article><span class="fact-number">03</span><h3>Play your way.</h3><p>Adjust sound, screen shake, and control hints. Settings and match statistics stay on your device.</p></article></section>
-<section class="screenshots wrap"><div class="section-heading"><div><span class="eyebrow">A closer look</span><h2>Inside the arena.</h2></div></div><figure>{picture('snow-push-gameplay','Development preview of a Snow Push match with steering and Ram controls','loading="lazy"')}<figcaption>Development preview. The released version may differ.</figcaption></figure></section>
+<section class="screenshots wrap"><div class="section-heading"><div><span class="eyebrow">A closer look</span><h2>Inside the arena.</h2></div></div><div class="snow-preview-gallery"><figure>{picture('snow-push-gameplay-20261101','Snow Push game preview: the fox faces a penguin, rabbit and reindeer on an unguarded ice arena, with touch steering and a Ram button','width="1280" height="720" loading="lazy"')}<figcaption>Game preview · Four riders, cracking ice, and no safety net.</figcaption></figure><figure>{picture('snow-push-menu-20261101','Snow Push Arctic main menu with Play, How to Play and Settings, without animal selection','width="1280" height="720" loading="lazy"')}<figcaption>The new Arctic menu · Jump straight into a match.</figcaption></figure><figure>{picture('snow-push-settings-20261101','Snow Push settings for volume, screen shake and control hints','width="1280" height="720" loading="lazy"')}<figcaption>Sound, screen shake, and control hints · Make yourself comfortable.</figcaption></figure></div><p class="preview-note">Development build shown in touch preview mode. The iPhone and iPad version is in development; the released version may differ.</p></section>
 <section class="support-strip wrap"><div><span class="eyebrow">Good to know</span><h2>Help is always close by.</h2></div><div class="link-pair"><a class="button secondary" href="/snow-push/support/">Snow Push support →</a><a class="text-link" href="/snow-push/privacy/">Privacy policy →</a></div></section>
 ''')
 
