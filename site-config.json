@@ -13,7 +13,7 @@
   },
   "hostingPrivacyText": null,
   "christmasBreaker": {
-    "description": "A festive, physics-based arcade game. Aim your shots and keep the board clear as the challenge grows.",
+    "description": "Bounce snowballs through numbered Christmas gifts in a festive arcade game for iPhone and iPad.",
     "storeUrl": null,
     "privacyHtmlFile": "src/christmas-breaker-privacy.html",
     "privacyPracticesReviewed": false

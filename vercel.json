@@ -5,6 +5,9 @@
   "buildCommand": "node vercel-build.mjs",
   "outputDirectory": "dist",
   "trailingSlash": true,
+  "redirects": [
+    { "source": "/ot/", "destination": "/christmas-breaker/", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)",
